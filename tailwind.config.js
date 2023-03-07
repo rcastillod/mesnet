@@ -6,6 +6,7 @@ module.exports = {
       colors: {
         primary: 'var(--ast-global-color-0)',
         secondary: 'var(--ast-global-color-1)',
+        tertiary: 'var(--ast-global-color-2)',
       },
     },
   },
