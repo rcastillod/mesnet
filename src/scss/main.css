@@ -1,0 +1,13 @@
+/* -------------------------------------------------------------------------- */
+/*                                   GLOBAL                                   */
+/* -------------------------------------------------------------------------- */
+.wp-block-button .wp-block-button__link,
+.elementor-button-wrapper .elementor-button,
+.elementor-button-wrapper .elementor-button:visited {
+  @apply text-tertiary;
+}
+.wp-block-button .wp-block-button__link:is(:hover, :focus),
+.elementor-button-wrapper .elementor-button:is(:hover, :focus),
+.elementor-button-wrapper .elementor-button:visited:is(:hover, :focus) {
+  @apply border-tertiary bg-tertiary text-primary;
+}

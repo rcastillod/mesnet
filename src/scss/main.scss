@@ -1,0 +1,13 @@
+/* -------------------------------------------------------------------------- */
+/*                                   GLOBAL                                   */
+/* -------------------------------------------------------------------------- */
+
+// Buttons
+.wp-block-button .wp-block-button__link, 
+.elementor-button-wrapper .elementor-button, 
+.elementor-button-wrapper .elementor-button:visited {
+  @apply text-tertiary;
+  &:is(:hover, :focus) {
+    @apply border-tertiary bg-tertiary text-primary;
+  }
+}
