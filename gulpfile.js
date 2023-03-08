@@ -20,6 +20,7 @@ const browserSync = require("browser-sync").create();
 const sass = require("gulp-sass")(require("sass")); //For Compiling SASS files
 const postcss = require("gulp-postcss"); //For Compiling tailwind utilities with tailwind config
 const concat = require("gulp-concat"); //For Concatinating js,css files
+const rename = require('gulp-rename'); //For Rename js,css files
 const uglify = require("gulp-terser"); //To Minify JS files
 const imagemin = require("gulp-imagemin"); //To Optimize Images
 const cleanCSS = require("gulp-clean-css"); //To Minify CSS files
@@ -60,6 +61,13 @@ function devStyles() {
     .pipe(dest(options.paths.dist.css));
 }
 
+function devStylesExt() {
+  return src(`${options.paths.src.cssExt}/**/*.css`)
+    .pipe(concat({ path: 'external.css' }))
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(dest(options.paths.dist.cssExt));
+}
+
 function devScripts() {
   return src([
     `${options.paths.src.js}/libs/**/*.js`,
@@ -68,6 +76,13 @@ function devScripts() {
   ])
     .pipe(concat({ path: "scripts.js" }))
     .pipe(dest(options.paths.dist.js));
+}
+
+function devScriptsExt() {
+  return src(`${options.paths.src.jsExt}/*.js`)
+    .pipe(concat({ path: 'external.js' }))
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(dest(options.paths.dist.jsExt));
 }
 
 function devImages() {
@@ -160,7 +175,7 @@ function buildFinish(done) {
 
 exports.default = series(
   devClean, // Clean Dist Folder
-  parallel(devStyles, devScripts, devImages, devPHP), //Run All tasks in parallel
+  parallel(devStyles, devStylesExt, devScripts, devScriptsExt, devImages, devPHP), //Run All tasks in parallel
   livePreview, // Live Preview Build
   watchFiles // Watch for Live Changes
 );

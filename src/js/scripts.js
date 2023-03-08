@@ -2,10 +2,17 @@
 /*                              Custom icon tabs                              */
 /* -------------------------------------------------------------------------- */
 
+// Create empty tab icon src array
+const planTabsIcons = []
+
+// Get icon tab from acf field
+const planDuoIcon = mesnet_script_object.tab_duo
+const planInternetIcon = mesnet_script_object.tab_internet
+
+planTabsIcons.push(planDuoIcon, planInternetIcon)
+
 // Tabs
 const planTabs = document.querySelectorAll('.elementor-tabs-wrapper > .elementor-tab-title')
-// Tabs images source
-const planTabsImages = ['http://mesnet.local/wp-content/uploads/2023/03/placeholder-pin-svgrepo-com.svg', 'http://mesnet.local/wp-content/uploads/2023/03/speedometer-svgrepo-com.svg', 'http://mesnet.local/wp-content/uploads/2023/03/browser-computing-svgrepo-com.svg']
 
 // Create img tag to append in tab
 const createImageTab = (src) => {
@@ -16,5 +23,5 @@ const createImageTab = (src) => {
 
 // Iterate over each tab and insert the image
 planTabs.forEach((tab, index) => {
-  tab.appendChild(createImageTab(planTabsImages[index]))
+  tab.appendChild(createImageTab(planTabsIcons[index]))
 })
