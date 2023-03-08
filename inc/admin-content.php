@@ -26,4 +26,14 @@ if (function_exists('acf_add_options_page')) {
     'position' => 21,
     'icon_url' => 'dashicons-admin-home'
   ));
+  // Servicios
+  acf_add_options_page(array(
+    'menu_title' => 'Servicios',
+    'page_title' => 'Servicios',
+    'menu_slug' => "servicios",
+    'capability' => 'edit_posts',
+    'redirect' => true,
+    'position' => 21,
+    'icon_url' => 'dashicons-products'
+  ));
 }
