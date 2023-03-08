@@ -45,7 +45,11 @@
   padding: 1.25em;
 }
 .plans__tabs .elementor-tabs > .elementor-tabs-wrapper .elementor-tab-title::before, .plans__tabs .elementor-tabs > .elementor-tabs-wrapper .elementor-tab-title::after {
-  border: none;
+  border: none !important;
+}
+
+.elementor-widget-tabs.elementor-tabs-view-horizontal .elementor-tab-desktop-title.elementor-active {
+  border-bottom-style: solid !important;
 }
 
 .plans__tabs .elementor-tab-title img {

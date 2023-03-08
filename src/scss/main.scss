@@ -48,10 +48,14 @@
   height: 9.375rem;
   width: 9.375rem;
   padding: 1.25em;
-
+  
   &::before, &::after {
-    border: none;
+    border: none !important;
   }
+}
+
+.elementor-widget-tabs.elementor-tabs-view-horizontal .elementor-tab-desktop-title.elementor-active {
+  border-bottom-style: solid !important;
 }
 
 .plans__tabs .elementor-tab-title img {

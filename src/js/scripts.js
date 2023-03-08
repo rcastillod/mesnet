@@ -2,9 +2,19 @@
 /*                              Custom icon tabs                              */
 /* -------------------------------------------------------------------------- */
 
-// Tab 1
-const tab1 = document.getElementById('elementor-tab-title-1581')
-const tab1Img = document.createElement('img')
-tab1Img.src = '//localhost:9050/wp-content/uploads/2023/03/isotipo-mesnet.svg'
+// Tabs
+const planTabs = document.querySelectorAll('.elementor-tabs-wrapper > .elementor-tab-title')
+// Tabs images source
+const planTabsImages = ['http://mesnet.local/wp-content/uploads/2023/03/placeholder-pin-svgrepo-com.svg', 'http://mesnet.local/wp-content/uploads/2023/03/speedometer-svgrepo-com.svg', 'http://mesnet.local/wp-content/uploads/2023/03/browser-computing-svgrepo-com.svg']
 
-tab1.appendChild(tab1Img)
+// Create img tag to append in tab
+const createImageTab = (src) => {
+  const tabImg = document.createElement('img')
+  tabImg.src = src
+  return tabImg
+}
+
+// Iterate over each tab and insert the image
+planTabs.forEach((tab, index) => {
+  tab.appendChild(createImageTab(planTabsImages[index]))
+})
