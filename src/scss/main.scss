@@ -1,3 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 /* -------------------------------------------------------------------------- */
 /*                              CUSTOM PROPERTIES                             */
 /* -------------------------------------------------------------------------- */
@@ -48,12 +53,19 @@
   height: 9.375rem;
   width: 9.375rem;
   padding: 1.25em;
+  transition: background-color 300ms ease-in-out;
   
   &::before, &::after {
     border: none !important;
   }
+  
+  &:is(:hover, :focus) {
+    @apply bg-tertiary/25;
+  }
+
 }
 
+// Override .elementor-active border
 .elementor-widget-tabs.elementor-tabs-view-horizontal .elementor-tab-desktop-title.elementor-active {
   border-bottom-style: solid !important;
 }

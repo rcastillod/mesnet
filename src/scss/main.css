@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 /* -------------------------------------------------------------------------- */
 /*                              CUSTOM PROPERTIES                             */
 /* -------------------------------------------------------------------------- */
@@ -43,9 +46,13 @@
   height: 9.375rem;
   width: 9.375rem;
   padding: 1.25em;
+  transition: background-color 300ms ease-in-out;
 }
 .plans__tabs .elementor-tabs > .elementor-tabs-wrapper .elementor-tab-title::before, .plans__tabs .elementor-tabs > .elementor-tabs-wrapper .elementor-tab-title::after {
   border: none !important;
+}
+.plans__tabs .elementor-tabs > .elementor-tabs-wrapper .elementor-tab-title:is(:hover, :focus) {
+  @apply bg-tertiary/25;
 }
 
 .elementor-widget-tabs.elementor-tabs-view-horizontal .elementor-tab-desktop-title.elementor-active {
