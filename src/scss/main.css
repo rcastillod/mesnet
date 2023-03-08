@@ -1,6 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 /* -------------------------------------------------------------------------- */
 /*                              CUSTOM PROPERTIES                             */
 /* -------------------------------------------------------------------------- */
@@ -51,7 +48,7 @@
 .plans__tabs .elementor-tabs > .elementor-tabs-wrapper .elementor-tab-title::before, .plans__tabs .elementor-tabs > .elementor-tabs-wrapper .elementor-tab-title::after {
   border: none !important;
 }
-.plans__tabs .elementor-tabs > .elementor-tabs-wrapper .elementor-tab-title:is(:hover, :focus) {
+.plans__tabs .elementor-tabs > .elementor-tabs-wrapper .elementor-tab-title.elementor-active, .plans__tabs .elementor-tabs > .elementor-tabs-wrapper .elementor-tab-title:is(:hover, :focus) {
   @apply bg-tertiary/25;
 }
 
@@ -62,4 +59,86 @@
 .plans__tabs .elementor-tab-title img {
   order: -1;
   width: 4.375rem;
+}
+
+.plans__tabs .elementor-tabs > .elementor-tabs-content-wrapper .elementor-tab-content {
+  border: none !important;
+  padding: 0;
+}
+
+.plan__wrapper {
+  @apply border-solid border-[5px] border-tertiary;
+  border-radius: var(--b-radius);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  text-align: center;
+}
+
+.plan__wrapper:nth-child(odd) {
+  @apply bg-tertiary text-white;
+}
+.plan__wrapper:nth-child(odd) > .plan__header {
+  @apply bg-primary text-tertiary;
+}
+.plan__wrapper:nth-child(odd) .plan__price {
+  @apply text-primary;
+}
+.plan__wrapper:nth-child(odd) .plan__internet {
+  @apply border-primary;
+}
+
+.plan__wrapper:nth-child(even) {
+  @apply bg-white text-tertiary;
+}
+.plan__wrapper:nth-child(even) > .plan__header {
+  @apply bg-secondary text-white;
+}
+.plan__wrapper:nth-child(even) .plan__price {
+  @apply text-secondary;
+}
+.plan__wrapper:nth-child(even) .plan__internet {
+  @apply border-secondary;
+}
+
+.plan__header {
+  border-top-left-radius: 0.5625rem;
+  border-top-right-radius: 0.5625rem;
+  font-size: 2.125rem;
+  padding: 0.35em 1.875em;
+  text-transform: uppercase;
+}
+
+.plan__price {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3125rem;
+  font-size: 2.375rem;
+}
+.plan__price > span {
+  font-size: 28px;
+}
+
+.plan__content {
+  padding: 1.875em 3.75em;
+}
+
+.plan__internet {
+  border-bottom: 1px solid;
+  padding-block-end: 0.625rem;
+}
+
+.plan__television {
+  padding-block-start: 0.625rem;
+}
+
+.plan__internet > .title,
+.plan__television > .title {
+  font-size: 1.625rem;
+  font-style: italic;
+  line-height: 1;
+}
+.plan__internet > .descripcion,
+.plan__television > .descripcion {
+  font-size: 0.875rem;
 }

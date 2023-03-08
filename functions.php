@@ -18,6 +18,7 @@ $file_includes = array(
 	'/enqueue.php',
 	'/admin-content.php',
 	'/extras.php',
+	'/servicios.php',
 );
 
 foreach ($file_includes as $file) {

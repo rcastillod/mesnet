@@ -29,6 +29,7 @@ function child_enqueue_styles()
   wp_enqueue_script('mesnet-scripts-external', get_stylesheet_directory_uri() . '/dist/js/external/external.min.js', '', '1.0.0', true);
   /* Theme script */
   wp_enqueue_script('mesnet-child-theme-js', get_stylesheet_directory_uri() . '/dist/js/scripts.js', '', '1.0.0', true);
+
   // Get fields from servicios
   $planes_duo = get_field('planes_duo', 'option');
   $planes_internet = get_field('planes_internet', 'option');

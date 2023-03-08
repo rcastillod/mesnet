@@ -1,8 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-
 /* -------------------------------------------------------------------------- */
 /*                              CUSTOM PROPERTIES                             */
 /* -------------------------------------------------------------------------- */
@@ -35,7 +30,7 @@
   overflow: hidden;
 }
 
-// Tabs
+// Tabs - Tab Title
 .plans__tabs .elementor-tabs > .elementor-tabs-wrapper{
   display: flex;
   justify-content: center;
@@ -58,7 +53,8 @@
   &::before, &::after {
     border: none !important;
   }
-  
+
+  &.elementor-active,
   &:is(:hover, :focus) {
     @apply bg-tertiary/25;
   }
@@ -73,4 +69,92 @@
 .plans__tabs .elementor-tab-title img {
   order: -1;
   width: 4.375rem;
+}
+
+// Tabs - Tab Content
+.plans__tabs .elementor-tabs > .elementor-tabs-content-wrapper .elementor-tab-content {
+  border: none !important;
+  padding: 0;
+}
+
+.plan__wrapper {
+  @apply border-solid border-[5px] border-tertiary; 
+  border-radius: var(--b-radius);
+  font-family: 'Montserrat',sans-serif;
+  font-weight: 900;
+  text-align: center;
+}
+
+// Odd Even style
+.plan__wrapper:nth-child(odd) {
+  @apply bg-tertiary text-white; 
+  & > .plan__header {
+    @apply bg-primary text-tertiary;
+  }
+  .plan__price {
+    @apply text-primary;
+  }
+  .plan__internet {
+    @apply border-primary;
+  }
+}
+
+.plan__wrapper:nth-child(even) {
+  @apply bg-white text-tertiary; 
+  & > .plan__header {
+    @apply bg-secondary text-white;
+  }
+  .plan__price {
+    @apply text-secondary;
+  }
+  .plan__internet {
+    @apply border-secondary;
+  }
+}
+
+// Header
+.plan__header {
+  border-top-left-radius: .5625rem;
+  border-top-right-radius: .5625rem;
+  font-size: 2.125rem;
+  padding: 0.35em 1.875em;
+  text-transform: uppercase;
+}
+
+.plan__price {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .3125rem;
+  font-size: 2.375rem;
+
+  & > span {
+    font-size: 28px;
+  }
+}
+
+// Content
+.plan__content {
+  padding: 1.875em 3.75em;
+}
+
+.plan__internet {
+  border-bottom: 1px solid;
+  padding-block-end: .625rem;
+}
+
+.plan__television {
+  padding-block-start: .625rem;
+}
+
+.plan__internet,
+.plan__television {
+  > .title {
+    font-size: 1.625rem;
+    font-style: italic;
+    line-height: 1;
+  }
+  > .descripcion {
+    font-size: .875rem;
+  }
 }
