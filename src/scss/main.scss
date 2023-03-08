@@ -1,4 +1,13 @@
 /* -------------------------------------------------------------------------- */
+/*                              CUSTOM PROPERTIES                             */
+/* -------------------------------------------------------------------------- */
+:root {
+
+  // Border
+  --b-radius: .9375rem;
+}
+
+/* -------------------------------------------------------------------------- */
 /*                                   GLOBAL                                   */
 /* -------------------------------------------------------------------------- */
 
@@ -10,4 +19,42 @@
   &:is(:hover, :focus) {
     @apply border-tertiary bg-tertiary text-primary;
   }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                 COMPONENTS                                 */
+/* -------------------------------------------------------------------------- */
+
+// Main info logo bg
+.logo__wrapper {
+  overflow: hidden;
+}
+
+// Tabs
+.plans__tabs .elementor-tabs > .elementor-tabs-wrapper{
+  display: flex;
+  justify-content: center;
+  gap: 3.125rem;
+  margin-block-end: 3.125rem
+}
+
+.plans__tabs .elementor-tabs > .elementor-tabs-wrapper .elementor-tab-title {
+  @apply border-2 border-tertiary;
+  border-radius: var(--b-radius);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.875rem;
+  height: 9.375rem;
+  width: 9.375rem;
+  padding: 1.25em;
+
+  &::before, &::after {
+    border: none;
+  }
+}
+
+.plans__tabs .elementor-tab-title img {
+  order: -1;
+  width: 4.375rem;
 }
