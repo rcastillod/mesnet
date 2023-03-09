@@ -61,7 +61,7 @@
 
   &.elementor-active,
   &:is(:hover, :focus) {
-    @apply bg-tertiary/25;
+    @apply bg-tertiary/[.2];
   }
 
 }
@@ -97,11 +97,37 @@
   font-weight: 900;
   min-height: 353px;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -80px;
+    left: 50%;
+    height: 100px;
+    width: 100px;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    filter: blur(20px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 300ms ease-in-out;
+  }
+
+  &:hover::after {
+    opacity: 1;
+    visibility: visible;
+  }
+
 }
 
 // Odd Even style
 .plan__wrapper:nth-child(odd) {
   @apply bg-tertiary text-white; 
+  &::after {
+    @apply bg-primary;
+  }
   & > .plan__header {
     @apply bg-primary text-tertiary;
   }
@@ -115,6 +141,9 @@
 
 .plan__wrapper:nth-child(even) {
   @apply bg-white text-tertiary; 
+  &::after {
+    @apply bg-secondary;
+  }
   & > .plan__header {
     @apply bg-secondary text-white;
   }
