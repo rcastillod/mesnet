@@ -30,7 +30,7 @@ planTabs.forEach((tab, index) => {
 /*                             Tabs content slider                            */
 /* -------------------------------------------------------------------------- */
 var swiper = new Swiper(".tabSlider", {
-  slidesPerView: 1,
+  slidesPerView: 1.2,
   spaceBetween: 10,
   pagination: {
     el: ".swiper-pagination",

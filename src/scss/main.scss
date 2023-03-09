@@ -30,6 +30,11 @@
   overflow: hidden;
 }
 
+// Tabs
+.tab__content-wrapper {
+  padding-block-end: 3.125rem !important;
+}
+
 // Tabs - Tab Title
 .plans__tabs .elementor-tabs > .elementor-tabs-wrapper{
   display: flex;
@@ -39,7 +44,7 @@
 }
 
 .plans__tabs .elementor-tabs > .elementor-tabs-wrapper .elementor-tab-title {
-  @apply border-2 border-tertiary;
+  @apply border-solid border-2 border-tertiary;
   border-radius: var(--b-radius);
   display: flex;
   flex-direction: column;
@@ -72,9 +77,17 @@
 }
 
 // Tabs - Tab Content
+.plans__tabs .elementor-tabs > .elementor-tabs-content-wrapper,
 .plans__tabs .elementor-tabs > .elementor-tabs-content-wrapper .elementor-tab-content {
   border: none !important;
+}
+
+.plans__tabs .elementor-tabs > .elementor-tabs-content-wrapper .elementor-tab-content {
   padding: 0;
+}
+
+.plans__tabs .elementor-tabs > .elementor-tabs-content-wrapper .elementor-tab-mobile-title {
+  display: none !important;
 }
 
 .plan__wrapper {
@@ -82,6 +95,7 @@
   border-radius: var(--b-radius);
   font-family: 'Montserrat',sans-serif;
   font-weight: 900;
+  min-height: 353px;
   text-align: center;
 }
 
@@ -140,11 +154,11 @@
 
 .plan__internet {
   border-bottom: 1px solid;
-  padding-block-end: .625rem;
+  padding-block-end: .9375rem;
 }
 
 .plan__television {
-  padding-block-start: .625rem;
+  padding-block-start: .9375rem;
 }
 
 .plan__internet,
@@ -153,8 +167,10 @@
     font-size: 1.625rem;
     font-style: italic;
     line-height: 1;
+    margin-block-end: .3125rem;
   }
   > .descripcion {
     font-size: .875rem;
+    line-height: 1.3;
   }
 }
