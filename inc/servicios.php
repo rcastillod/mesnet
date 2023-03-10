@@ -11,7 +11,7 @@ function mesnet_plan_duo()
 
   // Tab Group
   if (have_rows('planes_duo', 'option')) : ?>
-    <div id="tabSlider" class="swiper tabSlider tab__content-wrapper">
+    <div id="tabSliderDuo" class="swiper tabSlider tab__content-wrapper">
       <div class="swiper-wrapper">
         <?php
         while (have_rows('planes_duo', 'option')) : the_row();

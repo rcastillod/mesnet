@@ -26,10 +26,11 @@ planTabs.forEach((tab, index) => {
   tab.appendChild(createImageTab(planTabsIcons[index]))
 })
 
+
 /* -------------------------------------------------------------------------- */
 /*                             Tabs content slider                            */
 /* -------------------------------------------------------------------------- */
-var swiper = new Swiper(".tabSlider", {
+const swiper = new Swiper("#tabSliderDuo", {
   slidesPerView: 1.2,
   spaceBetween: 10,
   pagination: {
@@ -51,3 +52,13 @@ var swiper = new Swiper(".tabSlider", {
     },
   },
 });
+
+// const lastSlideIndex = swiper.slides.length - 1
+const lastSlideIndex = swiper.slides.length
+console.log(lastSlideIndex)
+if (swiper.activeIndex === lastSlideIndex && swiper.isEnd) {
+  const lastSlideElement = swiper.slides[lastSlideIndex];
+  if (lastSlideElement.classList.contains('swiper-slide-active')) {
+    alert('hola')
+  }
+}

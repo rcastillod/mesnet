@@ -33,6 +33,10 @@
 // Tabs
 .tab__content-wrapper {
   padding-block-end: 3.125rem !important;
+
+  & > .swiper-wrapper {
+    left: 34px;
+  }
 }
 
 // Tabs - Tab Title
