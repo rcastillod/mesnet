@@ -21,6 +21,23 @@
   }
 }
 
+// Social list
+.social .dce-acf-repeater-list {
+  display: inline-flex;
+  list-style-type: none;
+  gap: 15px;
+  margin: 0
+}
+
+.social__item {
+  @apply text-primary;
+  font-size: 1.4375rem;
+
+  &:is(:hover, :focus) {
+    @apply text-white;
+  }
+}
+
 /* -------------------------------------------------------------------------- */
 /*                                 COMPONENTS                                 */
 /* -------------------------------------------------------------------------- */
@@ -307,4 +324,14 @@
   100% {
       @apply text-secondary;
   }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                   FOOTER                                   */
+/* -------------------------------------------------------------------------- */
+.site-footer {
+  background-image: url(../img/footer-bg.png);
+  background-repeat: no-repeat;
+  background-position: center right;
+  background-blend-mode: screen;
 }
