@@ -34,8 +34,10 @@
 .tab__content-wrapper {
   padding-block-end: 3.125rem !important;
 
-  & > .swiper-wrapper {
-    left: 34px;
+  @media (max-width: 991px) {
+    & > .swiper-wrapper {
+      left: 34px;
+    }
   }
 }
 

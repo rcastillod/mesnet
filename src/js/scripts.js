@@ -30,35 +30,54 @@ planTabs.forEach((tab, index) => {
 /* -------------------------------------------------------------------------- */
 /*                             Tabs content slider                            */
 /* -------------------------------------------------------------------------- */
-const swiper = new Swiper("#tabSliderDuo", {
-  slidesPerView: 1.2,
-  spaceBetween: 10,
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-  breakpoints: {
-    640: {
-      slidesPerView: 2,
-      spaceBetween: 20,
-    },
-    768: {
-      slidesPerView: 3,
-      spaceBetween: 20,
-    },
-    1024: {
-      slidesPerView: 4,
-      spaceBetween: 30,
-    },
-  },
-});
 
-// const lastSlideIndex = swiper.slides.length - 1
-const lastSlideIndex = swiper.slides.length
-console.log(lastSlideIndex)
-if (swiper.activeIndex === lastSlideIndex && swiper.isEnd) {
-  const lastSlideElement = swiper.slides[lastSlideIndex];
-  if (lastSlideElement.classList.contains('swiper-slide-active')) {
-    alert('hola')
+window.addEventListener('load', () => {
+
+  const servicesSlider = document.querySelectorAll('.tabSlider') // Select all slider
+  const swiperWrapper = document.querySelectorAll('.swiper-wrapper') // Swiper wrapper
+  const mediaQuery = window.matchMedia("(max-width: 991px)") // Media query
+
+  for (let slider = 0; slider < servicesSlider.length; slider++) {
+    servicesSlider[slider].classList.add('tabSlider-' + slider);
+
+    const swiper = new Swiper('.tabSlider-' + slider, {
+      slidesPerView: 1.2,
+      spaceBetween: 10,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      breakpoints: {
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+        },
+        1024: {
+          slidesPerView: 4,
+          spaceBetween: 30,
+        },
+      },
+    });
+
+    if (mediaQuery.matches) {
+      // Slide change event
+      swiper.on('slideChange', () => {
+        // Check if the slider reached the end and the slide has the class swiper-slide-active
+        if (swiper.isEnd) {
+          swiperWrapper[slider].style.left = 'unset'
+          swiperWrapper[slider].style.right = '34px'
+        } else {
+          swiperWrapper[slider].style.left = '34px'
+          swiperWrapper[slider].style.right = 'unset'
+        }
+      })
+    }
+
   }
-}
+
+
+});

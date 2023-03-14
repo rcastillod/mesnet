@@ -29,8 +29,10 @@
 .tab__content-wrapper {
   padding-block-end: 3.125rem !important;
 }
-.tab__content-wrapper > .swiper-wrapper {
-  left: 34px;
+@media (max-width: 991px) {
+  .tab__content-wrapper > .swiper-wrapper {
+    left: 34px;
+  }
 }
 
 .plans__tabs .elementor-tabs > .elementor-tabs-wrapper {

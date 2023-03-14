@@ -70,7 +70,7 @@ function mesnet_plan_internet()
 
   // Tab Group
   if (have_rows('planes_internet', 'option')) : ?>
-    <div id="tabSlider" class="swiper tabSlider tab__content-wrapper">
+    <div id="tabSliderInternet" class="swiper tabSlider tab__content-wrapper">
       <div class="swiper-wrapper">
         <?php
         while (have_rows('planes_internet', 'option')) : the_row();
