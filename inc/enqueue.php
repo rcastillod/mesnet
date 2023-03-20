@@ -33,12 +33,16 @@ function child_enqueue_styles()
   // Get fields from servicios
   $planes_duo = get_field('planes_duo', 'option');
   $planes_internet = get_field('planes_internet', 'option');
+  $planes_internet_in = get_field('planes_internet_in', 'option');
+  $planes_empresa = get_field('planes_empresa', 'option');
   wp_localize_script(
     'mesnet-child-theme-js',
     'mesnet_script_object',
     array(
       'tab_duo' => $planes_duo['icono_servicio'],
       'tab_internet' => $planes_internet['icono_servicio'],
+      'tab_internet_in' => $planes_internet_in['icono_servicio'],
+      'tab_empresa' => $planes_empresa['icono_servicio'],
     )
   );
 }

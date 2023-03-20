@@ -36,4 +36,24 @@ if (function_exists('acf_add_options_page')) {
     'position' => 21,
     'icon_url' => 'dashicons-products'
   ));
+  acf_add_options_sub_page(array(
+    'page_title'  => __('Planes Duo'),
+    'menu_title'  => __('Planes Duo'),
+    'parent_slug' => 'servicios',
+  ));
+  acf_add_options_sub_page(array(
+    'page_title'  => __('Planes Hogar Fibra'),
+    'menu_title'  => __('Planes Hogar Fibra'),
+    'parent_slug' => 'servicios',
+  ));
+  acf_add_options_sub_page(array(
+    'page_title'  => __('Planes Hogar Inalambrico'),
+    'menu_title'  => __('Planes Hogar Inalambrico'),
+    'parent_slug' => 'servicios',
+  ));
+  acf_add_options_sub_page(array(
+    'page_title'  => __('Planes Empresa'),
+    'menu_title'  => __('Planes Empresa'),
+    'parent_slug' => 'servicios',
+  ));
 }

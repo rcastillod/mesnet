@@ -8,8 +8,10 @@ const planTabsIcons = []
 // Get icon tab from acf field
 const planDuoIcon = mesnet_script_object.tab_duo
 const planInternetIcon = mesnet_script_object.tab_internet
+const planInternetInalambricoIcon = mesnet_script_object.tab_internet_in
+const planEmpresaIcon = mesnet_script_object.tab_empresa
 
-planTabsIcons.push(planDuoIcon, planInternetIcon)
+planTabsIcons.push(planInternetIcon, planInternetInalambricoIcon, planDuoIcon, planEmpresaIcon)
 
 // Tabs
 const planTabs = document.querySelectorAll('.elementor-tabs-wrapper > .elementor-tab-title')
