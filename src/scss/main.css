@@ -57,6 +57,21 @@ header {
   z-index: 1;
 }
 
+.g3d-info-list {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+.g3d-info-list__item {
+  display: flex;
+  align-items: center;
+  gap: 0.3125rem;
+}
+.g3d-info-list__item > svg {
+  @apply text-primary;
+  width: 1.5rem;
+}
+
 /* -------------------------------------------------------------------------- */
 /*                                 COMPONENTS                                 */
 /* -------------------------------------------------------------------------- */

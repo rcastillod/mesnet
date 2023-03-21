@@ -61,6 +61,23 @@ header {
   z-index: 1;
 }
 
+// Info contact widget
+.g3d-info-list {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: .3125rem;
+    & > svg {
+      @apply text-primary;
+      width: 1.5rem;
+    }
+  }
+}
+
 /* -------------------------------------------------------------------------- */
 /*                                 COMPONENTS                                 */
 /* -------------------------------------------------------------------------- */
